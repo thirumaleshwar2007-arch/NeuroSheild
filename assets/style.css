@@ -1,46 +1,48 @@
-/* Professional & Clean Medical UI Styling */
+/* Native Streamlit Compatible CSS */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
 
 .stApp {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f6f9;
+    /* Use Streamlit native background variable so light/dark mode works! */
 }
 
 /* Header styling */
 .main-header {
-    background-color: #ffffff;
+    background-color: var(--secondary-background-color);
     padding: 2rem;
     border-radius: 8px;
-    color: #1a365d;
     margin-bottom: 2rem;
     border-top: 4px solid #3182ce;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .main-header h1, .main-header h2 {
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color: var(--text-color);
 }
 
 /* Feature and info cards */
 .feature-card {
-    background: #ffffff;
+    background-color: var(--secondary-background-color);
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid #3182ce;
     margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: var(--text-color);
 }
 
 /* Health score card */
 .health-score-card {
-    background: #ffffff;
+    background-color: var(--secondary-background-color);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-bottom: 1.5rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    color: var(--text-color);
 }
 
 .score-value {
@@ -93,10 +95,11 @@
 
 /* Suggestion Box */
 .suggestion-box {
-    background-color: #ebf8ff;
+    background-color: rgba(66, 153, 225, 0.1);
     border-left: 4px solid #4299e1;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 4px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
 }

@@ -206,19 +206,20 @@ class ModelManager:
     def load_all_models(self):
         """Load all ML models from the models directory"""
         for disease, details in self.model_details.items():
+            self.feature_names[disease] = {
+                'names': details['features'],
+                'descriptions': details['descriptions']
+            }
+            self.model_info[disease] = {
+                'description': details['description'],
+                'accuracy': details['accuracy'],
+                'source': details['source']
+            }
+            
             model_path = os.path.join(self.models_dir, details['file'])
             try:
                 with open(model_path, 'rb') as f:
                     self.models[disease] = pickle.load(f)
-                self.feature_names[disease] = {
-                    'names': details['features'],
-                    'descriptions': details['descriptions']
-                }
-                self.model_info[disease] = {
-                    'description': details['description'],
-                    'accuracy': details['accuracy'],
-                    'source': details['source']
-                }
                 print(f"✅ Loaded {disease} model")
             except FileNotFoundError:
                 print(f"⚠️ Model file not found: {model_path}")
