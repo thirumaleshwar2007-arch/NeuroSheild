@@ -1,85 +1,79 @@
-/* Failsafe Streamlit Native CSS */
+/* Bulletproof Contrast Safe CSS */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
 
 .stApp {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Use Inherit so it ALWAYS matches Streamlit's native light/dark mode perfectly */
-.main-header {
-    background-color: rgba(128, 128, 128, 0.05);
-    padding: 2rem;
+/* Force Light-Card styling so Text Contrast NEVER fails! */
+.main-header, .feature-card, .health-score-card, .suggestion-box {
+    background-color: #f8fafc !important; /* Fixed Light background */
+    color: #1a202c !important; /* Fixed Dark Text */
+    padding: 1.5rem;
     border-radius: 8px;
-    margin-bottom: 2rem;
-    border-top: 4px solid #3182ce;
-    border-left: 1px solid rgba(128, 128, 128, 0.2);
-    border-right: 1px solid rgba(128, 128, 128, 0.2);
-    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    margin-bottom: 1.2rem;
+    border: 1px solid #cbd5e0 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.main-header h1, .main-header h2, .main-header p {
-    margin-bottom: 0.5rem;
+.main-header {
+    border-top: 4px solid #3182ce !important;
 }
 
 .feature-card {
-    background-color: rgba(128, 128, 128, 0.05);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #3182ce;
-    margin-bottom: 1rem;
-    border-right: 1px solid rgba(128, 128, 128, 0.2);
-    border-top: 1px solid rgba(128, 128, 128, 0.2);
-    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    border-left: 4px solid #3182ce !important;
 }
 
-.health-score-card {
-    background-color: rgba(128, 128, 128, 0.05);
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(128, 128, 128, 0.2);
+.suggestion-box {
+    border-left: 4px solid #ed8936 !important;
+}
+
+.main-header h1, .main-header h2, .main-header h4, .main-header p,
+.feature-card h4, .feature-card p, .health-score-card h4, .suggestion-box b {
+    color: #1a202c !important; /* Force all headers inside cards to be dark */
 }
 
 .score-value {
     font-size: 3rem;
     font-weight: 700;
-    color: #2b6cb0;
+    color: #2b6cb0 !important;
 }
 
-.suggestion-box {
-    background-color: rgba(128, 128, 128, 0.1);
-    border-left: 4px solid #4299e1;
-    padding: 1.5rem;
-    border-radius: 4px;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
+/* Badges */
 .risk-badge {
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-weight: bold;
     font-size: 0.9rem;
     display: inline-block;
-    color: black;
+    color: #1a202c !important;
 }
 
 .risk-low {
-    background-color: #c6f6d5;
+    background-color: #c6f6d5 !important;
+    border: 1px solid #9ae6b4;
 }
 
 .risk-moderate {
-    background-color: #feebc8;
+    background-color: #feebc8 !important;
+    border: 1px solid #fbd38d;
 }
 
 .risk-high {
-    background-color: #fed7d7;
+    background-color: #fed7d7 !important;
+    border: 1px solid #feb2b2;
 }
 
+/* Buttons */
 .stButton > button {
-    background-color: #3182ce;
-    color: white;
-    border: none;
+    background-color: #3182ce !important;
+    color: white !important;
+    border: none !important;
     font-weight: bold;
+    transition: all 0.3s;
+}
+
+.stButton > button:hover {
+    background-color: #2b6cb0 !important;
+    color: white !important;
 }

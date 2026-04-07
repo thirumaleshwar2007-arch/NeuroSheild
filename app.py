@@ -85,7 +85,7 @@ def load_css():
 
 # Initialize components
 @st.cache_resource
-def init_components():
+def init_components(version="v2"):
     return {
         'models': ModelManager(),
         'scorer': HealthScoreCalculator(),
@@ -93,7 +93,7 @@ def init_components():
         'validator': InputValidator()
     }
 
-components = init_components()
+components = init_components(version="v2")
 load_css()
 
 # Session state initialization
