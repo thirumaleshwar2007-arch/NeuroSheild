@@ -1,48 +1,44 @@
-/* Native Streamlit Compatible CSS */
+/* Failsafe Streamlit Native CSS */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
 
 .stApp {
     font-family: 'Roboto', sans-serif;
-    /* Use Streamlit native background variable so light/dark mode works! */
 }
 
-/* Header styling */
+/* Use Inherit so it ALWAYS matches Streamlit's native light/dark mode perfectly */
 .main-header {
-    background-color: var(--secondary-background-color);
+    background-color: rgba(128, 128, 128, 0.05);
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
     border-top: 4px solid #3182ce;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(128, 128, 128, 0.2);
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
-.main-header h1, .main-header h2 {
-    font-weight: 600;
+.main-header h1, .main-header h2, .main-header p {
     margin-bottom: 0.5rem;
-    color: var(--text-color);
 }
 
-/* Feature and info cards */
 .feature-card {
-    background-color: var(--secondary-background-color);
+    background-color: rgba(128, 128, 128, 0.05);
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid #3182ce;
     margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    color: var(--text-color);
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
-/* Health score card */
 .health-score-card {
-    background-color: var(--secondary-background-color);
+    background-color: rgba(128, 128, 128, 0.05);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-bottom: 1.5rem;
     border: 1px solid rgba(128, 128, 128, 0.2);
-    color: var(--text-color);
 }
 
 .score-value {
@@ -51,55 +47,39 @@
     color: #2b6cb0;
 }
 
-/* Badges */
-.risk-badge {
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    display: inline-block;
-    text-transform: uppercase;
-}
-
-.risk-low {
-    background-color: #c6f6d5;
-    color: #22543d;
-}
-
-.risk-moderate {
-    background-color: #feebc8;
-    color: #7b341e;
-}
-
-.risk-high {
-    background-color: #fed7d7;
-    color: #822727;
-}
-
-/* Buttons */
-.stButton > button {
-    background-color: #3182ce;
-    color: white;
-    border: none;
-    padding: 0.6rem 2rem;
-    font-size: 1rem;
-    font-weight: 500;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.stButton > button:hover {
-    background-color: #2b6cb0;
-    color: white;
-}
-
-/* Suggestion Box */
 .suggestion-box {
-    background-color: rgba(66, 153, 225, 0.1);
+    background-color: rgba(128, 128, 128, 0.1);
     border-left: 4px solid #4299e1;
     padding: 1.5rem;
     border-radius: 4px;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color);
+}
+
+.risk-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+    color: black;
+}
+
+.risk-low {
+    background-color: #c6f6d5;
+}
+
+.risk-moderate {
+    background-color: #feebc8;
+}
+
+.risk-high {
+    background-color: #fed7d7;
+}
+
+.stButton > button {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    font-weight: bold;
 }
