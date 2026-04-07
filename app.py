@@ -338,6 +338,30 @@ else:
                             )
                             feature_values.append(value)
                             
+            # Live Input Suggestions Box
+            st.markdown("### 💡 Live Input Explanations")
+            suggestions = []
+            for name, val in zip(feature_names, feature_values):
+                fname = name.lower()
+                if ('glucose' in fname or 'sugar' in fname) and val > 140:
+                    suggestions.append(f"<b>{name}</b>: {val} is elevated. Typical fasting levels are under 100 mg/dL.")
+                elif ('blood' in fname or 'bp' in fname or 'pressure' in fname) and val > 130:
+                    suggestions.append(f"<b>{name}</b>: {val} indicates high blood pressure guidelines. Keeping it under 120 is recommended.")
+                elif 'bmi' in fname and val >= 25:
+                    suggestions.append(f"<b>{name}</b>: {val} is considered outside the optimal healthy weight range.")
+                elif 'cholesterol' in fname and val > 200:
+                    suggestions.append(f"<b>{name}</b>: {val} is elevated. Normal total cholesterol should ideally be below 200 mg/dL.")
+                elif 'heart rate' in fname and val > 100:
+                    suggestions.append(f"<b>{name}</b>: {val} resting bpm is high. Normal range is typically 60-100 bpm.")
+                elif 'albumin' in fname and val > 0:
+                    suggestions.append(f"<b>{name}</b>: Elevated albumin in urine can be an early indicator of kidney stress.")
+                    
+            if suggestions:
+                suggestion_html = "<ul style='margin-bottom:0;'>" + "".join([f"<li>{s}</li>" for s in suggestions]) + "</ul>"
+                st.markdown(f'<div class="suggestion-box"><b>Check your inputs:</b><br>{suggestion_html}</div>', unsafe_allow_html=True)
+            else:
+                st.markdown('<div class="suggestion-box"><b>✓ Looking Good</b><br>Your currently entered metrics fall within generally normal baselines.</div>', unsafe_allow_html=True)
+                
             if st.button(f"🔍 Predict {selected}", use_container_width=True):
                 with st.spinner("🤖 Analyzing patient data..."):
                     prediction_result = components['models'].predict(disease_key, feature_values)

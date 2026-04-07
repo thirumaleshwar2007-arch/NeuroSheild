@@ -1,183 +1,102 @@
-/* Ultra Modern Interactive CSS Styling */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+/* Professional & Clean Medical UI Styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
 
 .stApp {
-    font-family: 'Outfit', sans-serif;
-    background-color: #f0f4f8; /* Soft background */
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
 }
 
-/* Header styling with animated gradient */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
+/* Header styling */
 .main-header {
-    background: linear-gradient(-45deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    padding: 2.5rem;
-    border-radius: 16px;
-    color: white;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    color: #1a365d;
     margin-bottom: 2rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
+    border-top: 4px solid #3182ce;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .main-header h1, .main-header h2 {
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
-/* Glassmorphism health score card */
-.health-score-card {
-    background: rgba(255, 255, 255, 0.85);
+/* Feature and info cards */
+.feature-card {
+    background: #ffffff;
     padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border-left: 4px solid #3182ce;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Health score card */
+.health-score-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     text-align: center;
     margin-bottom: 1.5rem;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.health-score-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(31, 38, 135, 0.15);
+    border: 1px solid #e2e8f0;
 }
 
 .score-value {
-    font-size: 3.5rem;
-    font-weight: 800;
-    background: -webkit-linear-gradient(45deg, #00C9FF, #92FE9D);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2b6cb0;
 }
 
-.health-score-card:hover .score-value {
-    transform: scale(1.1);
-}
-
-.score-label {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #555;
-    margin-top: 0.5rem;
-}
-
-/* Dynamic Risk badges */
+/* Badges */
 .risk-badge {
-    padding: 0.6rem 1.2rem;
-    border-radius: 30px;
-    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
     display: inline-block;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    letter-spacing: 0.5px;
     text-transform: uppercase;
-    font-size: 0.85rem;
 }
 
 .risk-low {
-    background: linear-gradient(135deg, #d4edda, #c3e6cb);
-    color: #155724;
-    border: 1px solid #b1dfbb;
+    background-color: #c6f6d5;
+    color: #22543d;
 }
 
 .risk-moderate {
-    background: linear-gradient(135deg, #fff3cd, #ffe8a1);
-    color: #856404;
-    border: 1px solid #ffeeba;
+    background-color: #feebc8;
+    color: #7b341e;
 }
 
 .risk-high {
-    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-    animation: pulseRisk 2s infinite;
+    background-color: #fed7d7;
+    color: #822727;
 }
 
-@keyframes pulseRisk {
-    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
-}
-
-/* Interactive Feature cards */
-.feature-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    border-left: 5px solid #00f2fe;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.feature-card:hover {
-    transform: translateX(10px);
-    box-shadow: 0 6px 15px rgba(0,f2,fe, 0.2);
-    border-left: 8px solid #4facfe;
-}
-
-/* Progress bar styling */
-.stProgress > div > div > div > div {
-    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
-    border-radius: 20px;
-}
-
-/* Spectacular Button styling */
+/* Buttons */
 .stButton > button {
-    background: linear-gradient(45deg, #FF416C, #FF4B2B);
+    background-color: #3182ce;
     color: white;
     border: none;
-    padding: 0.85rem 2.5rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4);
-    letter-spacing: 1px;
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px;
     width: 100%;
 }
 
 .stButton > button:hover {
-    background: linear-gradient(45deg, #FF4B2B, #FF416C);
-    transform: translateY(-3px) scale(1.01);
-    box-shadow: 0 8px 25px rgba(255, 75, 43, 0.6);
+    background-color: #2b6cb0;
+    color: white;
 }
 
-.stButton > button:active {
-    transform: translateY(1px);
-}
-
-/* Input fields modern look */
-.stNumberInput > div > div > input {
-    border-radius: 8px;
-    border: 2px solid #e1e8ed;
-    transition: all 0.3s ease;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 500;
-}
-
-.stNumberInput > div > div > input:focus {
-    border-color: #4facfe;
-    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
-}
-
-/* Expanders */
-.streamlit-expanderHeader {
-    font-weight: 600;
-    font-family: 'Outfit', sans-serif;
-    background-color: white;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
+/* Suggestion Box */
+.suggestion-box {
+    background-color: #ebf8ff;
+    border-left: 4px solid #4299e1;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
